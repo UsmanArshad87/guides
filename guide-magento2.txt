@@ -1,0 +1,46 @@
+Practice:
+
+Best seller
+Recently Viewed Products
+Most viewed
+Customers Who Bought This Item Also Bought
+Up Sell Products
+
+
+Magento Recommended:
+rm -rf /pub/static/*/* /var/view_preprocessed/*
+
+Common store codes:     ar_SA de_DE en_US;
+Specific theme:         --theme=mageBig/martfury_custom;
+No Parent:              --no-parent --theme Aalogics/luma_child;
+Only Admin HTML:        --area adminhtml;
+
+learn permisson so no required again n again chmod
+sudo chown -R www-data:www-data var/
+sudo chown -R www-data:www-data generated/
+sudo chown -R www-data:www-data pub/static
+
+
+chmod -R 777 app/ var/ pub/static/ pub/media/ generated/; m c:c;
+
+Never delete complete directory directly, always add the /* after it
+
+When changing from production mode to developer mode, delete the contents of the generated/code and generated/metadata directories:
+rm -rf /generated/metadata/* /generated/code/*
+
+
+Elements:
+=========
+Skip - skip_to_content
+Wishlist - wish-list-link
+Compare - catalog.compare.link
+Menu - catalog.topnav
+
+
+
+Core URLs:
+==========
+http://local.modastile/wishlist/index/
+http://local.modastile/customer/account/create/
+http://local.modastile/customer/account/forgotpassword/
+http://local.modastile/customer/account/login/

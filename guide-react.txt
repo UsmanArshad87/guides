@@ -1,0 +1,70 @@
+Gatsby Drupal
+https://github.com/gatsbyjs/gatsby/tree/master/examples/using-drupal
+
+when to use gatsby vs and when to use next
+
+
+https://nextjs.org/learn/foundations/from-javascript-to-react/essential-javascript-react
+
+Building Blocks of a Web Application
+There are a few things you need to consider when building modern applications. Such as:
+
+User Interface - how users will consume and interact with your application.
+Routing - how users navigate between different parts of your application.
+Data Fetching - where your data lives and how to get it.
+Rendering - when and where you render static or dynamic content.
+Integrations - what third-party services you use (CMS, auth, payments, etc) and how you connect to them.
+Infrastructure - where you deploy, store, and run your application code (Serverless, CDN, Edge, etc).
+Performance - how to optimize your application for end-users.
+Scalability - how your application adapts as your team, data, and traffic grow.
+Developer Experience - your team’s experience building and maintaining your application.
+
+Variables created without a declaration keyword (var, let, or const) are always global, even if they are created inside a function.
+
+Loop rules:
+Do not use for in over an Array if the index order is important.
+
+The index order is implementation-dependent, and array values may not be accessed in the order you expect.
+
+It is better to use a for loop, a for of loop, or Array.forEach() when the order is important.
+
+three essential React concepts: components, props, and state.
+
+How React handles renders and how to use refs
+How to manage state
+How to use context for deeply nested data
+How to use React API hooks such as useEffect()
+
+
+How Next.js Works
+
+The environment where your code runs: Development vs. Production
+When your code runs: Build Time vs. Runtime
+Where rendering happens: Client vs. Server
+Now let’s dive deeper into these concepts and discuss some of the processes Next.js is doing behind the scenes.
+
+
+Guide next js
+
+Furthermore, in a production build of Next.js, whenever Link components appear in the browser’s viewport, Next.js automatically prefetches the code for the linked page in the background. By the time you click the link, the code for the destination page will already be loaded in the background, and the page transition will be near-instant!
+
+
+
+Prerequisites
+	Basic CSS knowledge. This course will go over how to add CSS in a Next.js app, but it won't cover CSS fundamentals.
+
+
+
+
+If you’re looking for detailed documentation on Next.js styling, take a look at the CSS documentation. https://nextjs.org/docs/basic-features/built-in-css-support
+
+
+
+Setup:
+Next JS test app
+nvm use v16
+
+npx create-next-app@latest nextjs-blog --use-npm --example "https://github.com/vercel/next-learn/tree/master/basics/learn-starter"
+cd nextjs-blog
+npm run dev
+

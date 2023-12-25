@@ -1,0 +1,124 @@
+Linux Cmds https://www.instagram.com/p/CwiNoJfBkig/
+
+Search text:
+
+
+Search Files:
+
+find . | ack autocomplete.js
+ack -f | ack "fastest_fashion.js"
+find . -name "*.bak" -type f
+find . -name "*:Zone.Identifier" -type f -delete
+
+
+Delete Files
+find . -name "*.bak" -type f -delete
+
+
+Check size:
+du -sh project.tar public_html/ --exclude=media
+
+nano /etc/apache2/sites-available/magento.conf
+
+
+service apache2 restart; service mysql restart; service elasticsearch restart; service php7.4-fpm start; service php8.1-fpm start; service php8.2-fpm start;
+service php7.4-fpm restart; service php8.1-fpm restart; service php8.2-fpm restart;
+a2dismod php7.4; a2dismod php8.0; a2dismod php8.2; a2enmod php8.1;
+
+
+Unzip Files: without prompt add -o
+unzip -o file.zip
+
+Browsing the list of files inside a ZIP archive without decompressing:
+zip -sf file.zip
+unzip –l file.zip
+
+
+Compress:
+zip -R public_html hayatmart.zip
+zip -r theme.zip lib/
+tar -zvcf project.tar public_html/ --exclude=pub/media/*
+
+ls -al /etc/apache2/mods-enabled/
+
+sudo kill -9 `sudo lsof -t -i:3000`
+
+redis-cli -h redis flushall && redis-cli -h redis-session -p 6380 flushall && redis-cli -h redis-config-cache -p 6381 flushall
+
+composer self-update --2
+
+
+Change pass:
+
+To change a password for user named tom in Ubuntu, type:
+sudo passwd tom
+To change a password for root user on Ubuntu Linux, run:
+sudo passwd root
+And to change your own password for Ubuntu, execute:
+passwd
+
+
+Shutdown WSL:
+wsl --list --verbose
+wsl --shutdown
+
+Ubunto Version:
+lsb_release -a
+lsb_release -dc
+
+Check listening app status:
+netstat -anp | grep apache
+netstat -anp | grep elasticsearch
+
+
+
+Next JS Build:
+==============
+sudo pm2 stop revamp-app
+
+ps aux | grep 'pm2'
+ps aux | grep 'next'
+sudo kill -9 
+sudo pm2 status
+
+sudo npm run build
+
+sudo pm2 start npm --name "revamp-app" -- run start
+sudo pm2 start npm --name "revamp-app" -- run dev
+
+sudo pm2 save
+
+
+npx next --version
+
+
+cd /var/www/nextjs/aalogics-revamp-frontend
+
+sudo pm2 stop revamp-app
+
+sudo git checkout $branch_name
+sudo git pull origin $branch_name
+
+sudo npm install
+sudo npm run build
+sudo pm2 start revamp-app
+sudo pm2 save
+
+
+
+
+Connect SSH DB:
+===============
+
+username    =   jbxgkk3ph7u4c_stg
+dbname      =   jbxgkk3ph7u4c_stg
+password    =   crQccOO2MvEvRM1
+
+mysql -h 127.0.0.1 -P 3306 -u user -p
+mysql -h 127.0.0.1 -P 3306 -u jbxgkk3ph7u4c_stg -p
+
+mysqldump -h 127.0.0.1 -P 3306 -u jbxgkk3ph7u4c_stg -p jbxgkk3ph7u4c_stg > klarsicht_stage_30_mar_22.sql
+
+mysql -h 127.0.0.1 -P 3306 -u jbxgkk3ph7u4c_stg -p
+
+ssh 1.ent-jbxgkk3ph7u4c-staging-5em2ouy@ssh.eu-5.magento.cloud "mysqldump -h 127.0.0.1 -P 3306 -u jbxgkk3ph7u4c_stg -p jbxgkk3ph7u4c_stg" > klarsicht_stage_30_mar_22.sql

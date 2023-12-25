@@ -1,0 +1,30 @@
+Get total tables of Database:
+=============================
+SELECT count(*) AS TOTALNUMBEROFTABLES FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'imark';
+
+UPDATE `core_config_data` SET `value`='0' WHERE `path`='dev/js/merge_files';
+UPDATE `core_config_data` SET `value`='0' WHERE `path`='dev/js/minify_files';
+UPDATE `core_config_data` SET `value`='0' WHERE `path`='dev/css/minify_files';
+UPDATE `core_config_data` SET `value`='0' WHERE `path`='dev/css/merge_css_files';
+
+
+SELECT  `theme_id`,  `parent_id`,  `theme_path`,  `theme_title`,  `preview_image`,  `is_featured`,  `area`,  `type`, LEFT(`code`, 256) FROM `jbxgkk3ph7u4c_stg`.`theme` LIMIT 1000;
+
+UPDATE `jbxgkk3ph7u4c_stg`.`theme` SET `type`='0' WHERE  `theme_id`=7;
+SELECT `theme_id`, `parent_id`, `theme_path`, `theme_title`, `preview_image`, `is_featured`, `area`, `type`, `code` FROM `klarsicht_stage_new`.`theme` WHERE  `theme_id`=7;
+
+
+
+Get size being loaded currently on DB Import:
+=============================================
+
+SELECT
+  TABLE_NAME AS `Table`,
+  ROUND((DATA_LENGTH + INDEX_LENGTH) / 1024 / 1024) AS `Size (MB)`
+FROM
+  information_schema.TABLES
+WHERE
+  TABLE_SCHEMA = "telecom"
+ORDER BY
+  `Table`
+ASC;

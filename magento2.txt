@@ -1,0 +1,92 @@
+rm -rf pub/static/* var/view_preprocessed/*
+rm -rf var/page_cache/* var/cache/* var/view_preprocessed/* var/log/*
+
+m s:s:d -f --theme Sm/revamp --no-parent;
+
+
+rm -rf pub/static/* generated/* var/page_cache/* var/cache/* var/view_preprocessed/* var/log/*
+m s:up; m s:d:c; m s:s:d -f; chmod -R 777 app/ var/ pub/static/ pub/media/ generated/; m c:c;
+
+
+Prep dev env for theming
+
+m deploy:mode:set developer
+m c:di layout block_html full_page translate
+m c:en layout block_html full_page translate
+
+
+alias m="php bin/magento"; alias c="m c:c"; alias gc="git checkout"; alias gb="git branch"; alias gs="git status"; alias gd="git diff"; alias ga="git add" alias r="chmod -R 777 app/ var/ pub/static/ pub/media/ generated/; m c:c";
+
+alias cc="cp -r app/design/frontend/Codazon/fastest/modastile/web/css/main.css pub/static/frontend/Codazon/fastest_modastile/en_US/css/main.css; m c:c"
+
+chmod -R 777 app/ var/ pub/static/ pub/media/ generated/;
+
+
+
+m i:reset catalog_product_category
+m i:reindex catalog_product_category
+
+
+Optional Plugins
+
+
+Improve Performance Disable following
+
+
+
+Useful free extensions:
+=======================
+
+WebP
+composer require yireo/magento2-webp2;
+m mo:en Yireo_Webp2 Yireo_NextGenImages;
+m c:c;
+m s:up;
+
+Check Composer & PHP requirements if takes time.
+
+
+
+Config through CLI:
+===================
+app:config:dump. This will dump all your config in your config.php
+
+Remove --lock-config if you want it saved in db instead of app/etc/config.php
+-lc --lock-config
+-le --lock-env
+
+m config:show [val]
+
+m config:set dev/static/sign 0
+
+m dev:template-hints:en
+m dev:template-hints:di
+
+
+JS
+m config:set dev/js/merge_files 1 -lc
+m config:set dev/js/minify_files 1 -lc
+m config:set dev/js/enable_js_bundling 1 -lc
+m config:set dev/js/move_script_to_bottom 1 -lc
+m config:set dev/js/enable_magepack_js_bundling 1 -lc
+
+
+CSS
+m config:set dev/css/minify_files 1 -lc
+m config:set dev/css/merge_css_files 1 -lc
+m config:set dev/css/use_css_critical_path 1 -lc
+m config:set dev/debug/template_hints_storefront_show_with_parameter 1 -lc
+m config:set dev/debug/template_hints_parameter_value m -lc
+
+
+Removing Pub dir Settings:
+==========================
+open magento/pub .htaccess and Enable:
+RewriteBase /pub/
+
+
+Git Clone
+https://github.com/magento/magento2/
+2.4.3-patch-34528
+
+git clone --branch 2.4.3-patch-34528 https://github.com/magento/magento2/

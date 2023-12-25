@@ -1,0 +1,93 @@
+git config core.fileMode false
+
+Status without untracked files
+git status -uno
+git status . -- ':!settings' ':!metadata'
+
+git stash -u - ( include untracked files )
+
+
+https://stackoverflow.com/questions/9069061/what-is-the-difference-between-git-merge-and-git-merge-no-ff
+--no-ff
+
+git
+reset
+HEAD~1 - previous
+HEAD~2 - previous of previous
+HEAD~ and so on...
+--hard - optional (removes all changes - except untracked files)
+
+
+How to undo the last commit from a remote git repository?
+
+This will undo the last commit locally
+git reset HEAD^
+
+Command to force push the local commit which was reverted to the remote git repository.
+git push origin +HEAD
+
+
+Undoing a Specific Commit:
+==========================
+git log --oneline
+git revert 2f5451f --no-edit
+git revert 62a4298 --no-edit
+
+Undoing Your Last Commit (That Has Not Been Pushed)
+git reset --soft HEAD~
+
+
+Undoing Local Changes That Have Been Committed (But Not Pushed)
+git reset 62a4298
+git reset --hard 2f5451f
+
+
+Save Git Credentials:
+git config --list --global
+git config --local credential.helper store
+git config --global credential.helper cache
+
+git config user.email "usman.arshad@aalogics.com"
+git config user.name "UA"
+
+
+GIT:
+====
+
+System level (applied to every user on the system and all their repositories)
+
+to view, git config --list --system (may need sudo)
+to set, git config --system color.ui true
+to edit system config file, git config --edit --system
+2. Global level (values specific personally to you, the user).
+
+to view, git config --list --global
+to set, git config --global user.name xyz
+to edit global config file, git config --edit --global
+3. Repository level (specific to that single repository)
+
+to view, git config --list --local
+to set, git config --local core.ignorecase true (--local optional)
+to edit repository config file, git config --edit --local (--local optional)
+
+
+If asking again,
+git config --list
+git config credential.helper cache
+git config credential.helper store
+
+
+Git Rename Branch
+
+Update 2022 - https://stackoverflow.com/questions/6591213/how-do-i-rename-a-local-git-branch
+git checkout old-name
+git branch --list
+git branch -m new-name
+
+git checkout master
+git branch -m old-name new-name
+
+git branch -a
+
+git push origin :old-name new-name
+git push origin -u new-name
