@@ -1,0 +1,94 @@
+Icons:
+======
+Account
+Cart
+Wishlist
+Hamburger
+Arrow down
+Arrow right
+Arrow carousel
+Close
+Search
+
+
+Delivery
+Return
+Secure payment
+Support
+
+Quick view
+Add to
+	Cart
+	Wishlist
+	Compare
+
+Call
+Phone
+
+Social
+
+
+
+
+
+CriticalCSS, FCP, LCP, CLS for all pages
+Defer offscreen images
+Home
+Custom Carousel on home page for above the fold screen.
+PDP
+PLP
+Cart
+Checkout
+CMS
+
+FCP - 0–1.8
+LCP - 0-2.5
+TTI - 0–3.8
+CLS - 0.1
+TBT - 0–200 ( in milliseconds )
+SI  - 0–3.4
+
+
+Critical.css
+Head
+Grid
+Custom font icon
+
+Page specific critical css
+home
+plp
+pdp
+
+main.css - global styles repeated
+Page specific css
+home
+pdp
+
+Record for Speed Optimizations:
+Screenshots
+Size of page
+Record of each page in detailed before pushing work on live
+
+Speed Optimizations learning from Brandcart
+	PLP
+	Lazy load
+	Images to WebP
+
+	PDP
+	Gallery, Carousel
+	Lazy load
+	Images to WebP
+
+3rd Party JS delaying Speed
+Analytics Tool via GTM, and GTM via some delay
+
+Custom CSS from Scratch
+Copy exising CSS
+	Tool or Script to copy covereaged Styles
+	Avoid manual copying style
+
+Advanced JS Bundling
+
+Extensions Free or Paid:
+	Lazy Loading
+	Images to WebP

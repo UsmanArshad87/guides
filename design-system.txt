@@ -1,0 +1,95 @@
+Design system
+
+Must todo in design & development
+Variables for
+Typo
+Font family
+	Font body
+	Font heading
+Font sizes
+Font weights
+
+Colors
+Primary
+	Primary light
+	Primary dark
+Secondary
+	Secondary light
+	Secondary dark
+Tertiary
+	Tertiary light
+	Tertiary dark
+
+Border size, radius, color
+Button
+	mobile/desktop sizes
+	filled, text, bordered
+		Hover, pressed, disabled, error, success
+	icon buttons
+
+All headings
+	mobile/desktop sizes
+
+
+Layout
+	xs - phone  - 0 - 767
+	md - tablet - 768 - 1079
+	lg - desktop - 1080+
+
+Typography
+Color 
+Icons
+Components
+
+Forms
+Error, Success, ReadOnly
+
+
+
+
+
+
+
+Design System
+R&D and get the best e-commerce design system
+Which cover For mobile/tablet/desktop
+Create following elements of design system for mobile/tablet/desktop
+Typefaces - Type system
+Icons - all icons used in whole website
+Buttons
+Forms
+Dropdown
+
+Colors
+Primary & Secondary Colors (Brand)
+Black, White & Greys (Neutral)
+Success, Warnings & Error Colors (Semantics)
+
+Selecting colours
+	A "Color Palette" consists of various categories of colours
+	Primary & Secondary Colors (Usually Represents the Brand Personality)
+	Black, White & Greys (Neutral Colors)
+	Success, Warnings & Error Colors (Semantics)
+
+
+Selecting typefaces
+Out of the multiple categories that consist of all the typefaces such as
+- Serif
+- Sans — serif
+- Display
+- Handwriting
+- Monospace
+
+Type system
+
+Selecting icons
+
+
+Mobile 0 - 767 - column 4
+Tablet 768 - 1023 - column 8
+Desktop+ 1024 - column 12
+
+
+
+Please provide me competitors websites
+Target country: Australia

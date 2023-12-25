@@ -1,0 +1,121 @@
+Clone Magento:
+
+composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=2.4.6-p3 m246p3
+
+cd m246p3;
+
+composer install
+
+Create virtual host:
+
+sudo nano /etc/apache2/sites-available/magento.conf
+
+<VirtualHost *:80>
+     ServerAdmin admin@local.m246p3
+     ServerName local.m246p3
+
+     DocumentRoot /var/www/html/demo/m2/m246p3/
+     <Directory /var/www/html/demo/m2/m246p3/>
+     DocumentRoot /var/www/html/projects/m246p3/
+     <Directory /var/www/html/projects/m246p3/>
+        Options Indexes FollowSymLinks MultiViews
+        AllowOverride All
+        Order allow,deny
+        allow from all
+     </Directory>
+
+     <FilesMatch \.php$>
+         SetHandler "proxy:unix:/run/php/php8.1-fpm.sock|fcgi://localhost"
+     </FilesMatch>
+
+     ErrorLog /var/log/apache2/error.log
+</VirtualHost>
+
+
+For Linux:
+sudo nano /etc/hosts
+127.0.0.1 local.m246p3
+
+C:\Windows\System32\drivers\etc
+127.0.0.1   local.m246p3
+::1   local.m246p3
+
+sudo a2enmod rewrite
+sudo a2ensite magento.conf
+service apache2 restart
+
+
+mysql -u m2root -p;
+
+CREATE DATABASE m246p3;
+
+Export Database:
+mysqldump -h localhost -u m2root -p m246p3 > m246p3.sql
+
+
+Import Database:
+mysql -u m2root -p m246p3 < m246p3.sql
+
+
+
+Install Magento:
+
+Set file permissions
+
+You must set read-write permissions for the web server group before you install Adobe Commerce or Magento Open Source. This is necessary so that the command line can write files to the file system.
+
+cd /var/www/html/<magento install directory>
+find var generated vendor pub/static pub/media app/etc -type f -exec chmod g+w {} +
+find var generated vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} +
+chown -R :www-data . # Ubuntu
+chmod u+x bin/magento
+
+
+
+sudo php -d memory_limit=4G bin/magento setup:install --base-url="http://local.m246p3/" --db-host="localhost" --db-name="m246p3" --db-user="m2root" --db-password="1" --admin-firstname="usman" --admin-lastname="arshad" --admin-email="usman.arshad@aalogics.com" --admin-user="usman" --admin-password="usman123" --language="en_US" --currency="USD" --timezone="America/Chicago" --use-rewrites="1" --backend-frontname="admin" --search-engine=elasticsearch7 --elasticsearch-host=localhost --elasticsearch-port=9200
+
+
+bin/magento setup:install \
+--base-url=http://localhost/magento2ee \
+--db-host=localhost \
+--db-name=magento \
+--db-user=magento \
+--db-password=magento \
+--admin-firstname=admin \
+--admin-lastname=admin \
+--admin-email=admin@admin.com \
+--admin-user=admin \
+--admin-password=admin123 \
+--language=en_US \
+--currency=USD \
+--timezone=America/Chicago \
+--use-rewrites=1 \
+--search-engine=opensearch \
+--opensearch-host=os-host.example.com \
+--opensearch-port=9200 \
+--opensearch-index-prefix=magento2 \
+--opensearch-timeout=15
+
+
+
+
+chmod -R 777 app/ var/ pub/static/ generated/;
+
+alias m="sudo php bin/magento"
+m d:m:se developer; m mo:d Magento_AdminAdobeImsTwoFactorAuth; m mo:d Magento_TwoFactorAuth;
+m s:up; m s:d:c; m s:s:d -f; sudo chmod -R 777 app/ var/ pub/static/ pub/media/ generated/; m c:c;
+
+Created Admin:
+
+m admin:user:create --admin-user=aal --admin-password=admin123 --admin-email=aal@aalogics.com --admin-firstname=aal --admin-lastname=logics
+
+m admin:user:create --admin-user=usman --admin-password=usman123 --admin-email=usman.arshad@aalogics.com --admin-firstname=usman --admin-lastname=arshad
+
+
+Install Sample Data:
+
+m sampledata:remove
+m sampledata:reset
+m sampledata:deploy
+
+If images not shown after sample data, give permission to folder
