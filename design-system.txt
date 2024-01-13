@@ -1,34 +1,63 @@
 Design system
+Typo
+Icons
+Colors
+Buttons
+	Types
+		Text
+		Bordered
+		Filled
+
+	States
+		Default
+		Hover
+		Pressed
+		Disabled
+Input Text
+Forms
+Spacing
+Borders
+Layout 
+Components
 
 Must todo in design & development
 Variables for
-Typo
-Font family
-	Font body
-	Font heading
-Font sizes
-Font weights
+
+
+Typo / Fonts
+	Font family
+		Font body
+		Font heading
+	Font sizes
+	Font weights
+	All headings
+		mobile/desktop sizes
+
+Icons
+
 
 Colors
-Primary
+	Primary
 	Primary light
 	Primary dark
-Secondary
+	Secondary
 	Secondary light
 	Secondary dark
-Tertiary
-	Tertiary light
-	Tertiary dark
 
-Border size, radius, color
 Button
 	mobile/desktop sizes
 	filled, text, bordered
 		Hover, pressed, disabled, error, success
 	icon buttons
 
-All headings
-	mobile/desktop sizes
+Spacing
+
+
+Forms
+
+
+Borders
+	Size, radius, colors
 
 
 Layout
@@ -36,15 +65,8 @@ Layout
 	md - tablet - 768 - 1079
 	lg - desktop - 1080+
 
-Typography
-Color 
-Icons
+
 Components
-
-Forms
-Error, Success, ReadOnly
-
-
 
 
 

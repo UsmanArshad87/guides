@@ -1,36 +1,46 @@
+Quick Deployment:
+
+rm -rf var/cache/*
 rm -rf pub/static/* var/view_preprocessed/*
 rm -rf var/page_cache/* var/cache/* var/view_preprocessed/* var/log/*
-
 m s:s:d -f --theme Sm/revamp --no-parent;
 
+rm -rf pub/static/frontend/Sm/revamp/ var/view_preprocessed/pub/static/frontend/Sm/revamp/ && m s:s:d -f --theme Sm/revamp --no-parent; chmod -R 777 app/ var/ pub/static/ pub/media/ generated/; m c:c;
+
+alias cc="cp -r app/design/frontend/Codazon/fastest/modastile/web/css/main.css pub/static/frontend/Codazon/fastest_modastile/en_US/css/main.css; m c:c"
+
+
+
+
+
+Full Deployment:
 
 rm -rf pub/static/* generated/* var/page_cache/* var/cache/* var/view_preprocessed/* var/log/*
 m s:up; m s:d:c; m s:s:d -f; chmod -R 777 app/ var/ pub/static/ pub/media/ generated/; m c:c;
 
 
-Prep dev env for theming
+Projects Files:
+
+
+php bin/magento admin:user:create --admin-firstname=usman --admin-lastname=arshad --admin-email=usman.arshad@aalogics.com --admin-user=usman --admin-password=Admin123
+
+Prep dev env for theming:
 
 m deploy:mode:set developer
 m c:di layout block_html full_page translate
 m c:en layout block_html full_page translate
 
-
-alias m="php bin/magento"; alias c="m c:c"; alias gc="git checkout"; alias gb="git branch"; alias gs="git status"; alias gd="git diff"; alias ga="git add" alias r="chmod -R 777 app/ var/ pub/static/ pub/media/ generated/; m c:c";
-
-alias cc="cp -r app/design/frontend/Codazon/fastest/modastile/web/css/main.css pub/static/frontend/Codazon/fastest_modastile/en_US/css/main.css; m c:c"
-
 chmod -R 777 app/ var/ pub/static/ pub/media/ generated/;
-
 
 
 m i:reset catalog_product_category
 m i:reindex catalog_product_category
 
 
-Optional Plugins
+Optional Plugins:
 
 
-Improve Performance Disable following
+Improve Performance Disable following:
 
 
 
