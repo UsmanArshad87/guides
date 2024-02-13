@@ -1,8 +1,8 @@
 Clone Magento:
 
-composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=2.4.6-p3 m246p3
+composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=2.4.6-p3 m245p5
 
-cd m246p3;
+cd m245p5;
 
 composer install
 
@@ -11,13 +11,13 @@ Create virtual host:
 sudo nano /etc/apache2/sites-available/magento.conf
 
 <VirtualHost *:80>
-     ServerAdmin admin@local.m246p3
-     ServerName local.m246p3
+     ServerAdmin admin@local.m245p5
+     ServerName local.m245p5
 
-     DocumentRoot /var/www/html/demo/m2/m246p3/
-     <Directory /var/www/html/demo/m2/m246p3/>
-     DocumentRoot /var/www/html/projects/m246p3/
-     <Directory /var/www/html/projects/m246p3/>
+     DocumentRoot /var/www/html/demo/m2/m245p5/
+     <Directory /var/www/html/demo/m2/m245p5/>
+     DocumentRoot /var/www/html/projects/m245p5/
+     <Directory /var/www/html/projects/m245p5/>
         Options Indexes FollowSymLinks MultiViews
         AllowOverride All
         Order allow,deny
@@ -34,11 +34,11 @@ sudo nano /etc/apache2/sites-available/magento.conf
 
 For Linux:
 sudo nano /etc/hosts
-127.0.0.1 local.m246p3
+127.0.0.1 local.m245p5
 
 C:\Windows\System32\drivers\etc
-127.0.0.1   local.m246p3
-::1   local.m246p3
+127.0.0.1   local.m245p5
+::1   local.m245p5
 
 sudo a2enmod rewrite
 sudo a2ensite magento.conf
@@ -47,14 +47,14 @@ service apache2 restart
 
 mysql -u m2root -p;
 
-CREATE DATABASE m246p3;
+CREATE DATABASE m245p5;
 
 Export Database:
-mysqldump -h localhost -u m2root -p m246p3 > m246p3.sql
+mysqldump -h localhost -u m2root -p m245p5 > m245p5.sql
 
 
 Import Database:
-mysql -u m2root -p m246p3 < m246p3.sql
+mysql -u m2root -p m245p5 < m245p5.sql
 
 
 
@@ -72,7 +72,7 @@ chmod u+x bin/magento
 
 
 
-sudo php -d memory_limit=4G bin/magento setup:install --base-url="http://local.m246p3/" --db-host="localhost" --db-name="m246p3" --db-user="m2root" --db-password="1" --admin-firstname="usman" --admin-lastname="arshad" --admin-email="usman.arshad@aalogics.com" --admin-user="usman" --admin-password="usman123" --language="en_US" --currency="USD" --timezone="America/Chicago" --use-rewrites="1" --backend-frontname="admin" --search-engine=elasticsearch7 --elasticsearch-host=localhost --elasticsearch-port=9200
+sudo php -d memory_limit=4G bin/magento setup:install --base-url="http://local.m245p5/" --db-host="localhost" --db-name="m245p5" --db-user="m2root" --db-password="1" --admin-firstname="usman" --admin-lastname="arshad" --admin-email="usman.arshad@aalogics.com" --admin-user="usman" --admin-password="usman123" --language="en_US" --currency="USD" --timezone="America/Chicago" --use-rewrites="1" --backend-frontname="admin" --search-engine=elasticsearch7 --elasticsearch-host=localhost --elasticsearch-port=9200
 
 
 bin/magento setup:install \

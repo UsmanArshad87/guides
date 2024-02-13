@@ -1,6 +1,6 @@
 Linux Cmds https://www.instagram.com/p/CwiNoJfBkig/
 
-alias m="php bin/magento"; alias cc="m c:c"; alias gc="git checkout"; alias gb="git branch"; alias gs="git status"; alias gd="git diff"; alias ga="git add"; alias gr="git restore --staged"; alias gp="git pull origin"; alias r="chmod -R 777 app/ var/ pub/static/ pub/media/ generated/; m c:c";
+alias m="php bin/magento"; alias cc="m c:c"; alias gc="git checkout"; alias gb="git branch"; alias gs="git status"; alias gl="git log"; alias gl1="git log --oneline"; alias gd="git diff"; alias ga="git add"; alias gr="git restore --staged"; alias gp="git pull origin"; alias gcp="git cherry-pick"; alias gsp="git show --pretty=raw"; alias r="chmod -R 777 app/ var/ pub/static/ pub/media/ generated/; m c:c";
 
 
 service apache2 restart; service mysql restart; service elasticsearch restart; service php7.4-fpm start; service php8.1-fpm start; service php8.2-fpm start;
@@ -8,6 +8,7 @@ service apache2 restart; service mysql restart; service elasticsearch restart; s
 service php7.4-fpm restart; service php8.1-fpm restart; service php8.2-fpm restart;
 
 a2dismod php7.4; a2dismod php8.0; a2dismod php8.2; a2enmod php8.1;
+
 
 
 Search text:

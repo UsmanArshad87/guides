@@ -5,24 +5,21 @@ rm -rf pub/static/* var/view_preprocessed/*
 rm -rf var/page_cache/* var/cache/* var/view_preprocessed/* var/log/*
 m s:s:d -f --theme Sm/revamp --no-parent;
 
-rm -rf pub/static/frontend/Sm/revamp/ var/view_preprocessed/pub/static/frontend/Sm/revamp/ && m s:s:d -f --theme Sm/revamp --no-parent; chmod -R 777 app/ var/ pub/static/ pub/media/ generated/; m c:c;
+rm -rf pub/static/frontend/bluesky/bluesky_koller_sneaker_01/ var/view_preprocessed/pub/static/frontend/bluesky/bluesky_koller_sneaker_01/ && m s:s:d -f --theme bluesky/bluesky_koller_sneaker_01 --no-parent; chmod -R 777 app/ var/ pub/static/ pub/media/ generated/; m c:c;
 
 alias cc="cp -r app/design/frontend/Codazon/fastest/modastile/web/css/main.css pub/static/frontend/Codazon/fastest_modastile/en_US/css/main.css; m c:c"
-
-
-
 
 
 Full Deployment:
 
 rm -rf pub/static/* generated/* var/page_cache/* var/cache/* var/view_preprocessed/* var/log/*
 m s:up; m s:d:c; m s:s:d -f; chmod -R 777 app/ var/ pub/static/ pub/media/ generated/; m c:c;
-
+m s:s:d de_DE -f;
 
 Projects Files:
 
 
-php bin/magento admin:user:create --admin-firstname=usman --admin-lastname=arshad --admin-email=usman.arshad@aalogics.com --admin-user=usman --admin-password=Admin123
+php bin/magento admin:user:create --admin-firstname=usman --admin-lastname=arshad --admin-email=usman.arshad@aalogics.com --admin-user=usman --admin-password=admin123
 
 Prep dev env for theming:
 
