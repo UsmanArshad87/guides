@@ -119,3 +119,9 @@ m sampledata:reset
 m sampledata:deploy
 
 If images not shown after sample data, give permission to folder
+
+
+Errors / Solutions
+if admin login not working
+web/cookie/cookie_domain
+local.m243p34

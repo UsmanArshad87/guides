@@ -1,0 +1,10 @@
+PHP
+
+ls /run/php/
+ls /usr/bin/php*
+find /etc/apache2 -name "*php*.conf"
+update-alternatives --display php
+whereis php7.4
+
+update-alternatives --set php /usr/bin/php7.4
+

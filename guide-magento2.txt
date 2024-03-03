@@ -34,7 +34,20 @@ Elements:
 Skip - skip_to_content
 Wishlist - wish-list-link
 Compare - catalog.compare.link
-Menu - catalog.topnav
+
+store.menu - container
+	Menu - catalog.topnav
+
+
+PDP
+
+media - product.info.main
+main info - product.info.media
+Details
+	Details, More info, reviews...
+	product.info.details
+	details.phtml
+
 
 
 

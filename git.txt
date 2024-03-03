@@ -1,5 +1,7 @@
+Use -m if it's a merged pick
 git cherry-pick -m 1 
 git show -m --pretty=raw 
+git cherry-pick --no-commit
 
 git reset --hard HEAD^
 

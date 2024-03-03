@@ -3,11 +3,7 @@ Quick Deployment:
 rm -rf var/cache/*
 rm -rf pub/static/* var/view_preprocessed/*
 rm -rf var/page_cache/* var/cache/* var/view_preprocessed/* var/log/*
-m s:s:d -f --theme Sm/revamp --no-parent;
-
-rm -rf pub/static/frontend/bluesky/bluesky_koller_sneaker_01/ var/view_preprocessed/pub/static/frontend/bluesky/bluesky_koller_sneaker_01/ && m s:s:d -f --theme bluesky/bluesky_koller_sneaker_01 --no-parent; chmod -R 777 app/ var/ pub/static/ pub/media/ generated/; m c:c;
-
-alias cc="cp -r app/design/frontend/Codazon/fastest/modastile/web/css/main.css pub/static/frontend/Codazon/fastest_modastile/en_US/css/main.css; m c:c"
+m s:s:d -f --theme Vendor/Theme --no-parent; chmod -R 777 app/ var/ pub/static/ pub/media/ generated/; m c:c;
 
 
 Full Deployment:
